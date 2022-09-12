@@ -13,13 +13,34 @@ class Fixed {
 		~Fixed( void );
 
 		Fixed & operator=(Fixed const & rhs);
+		Fixed & operator>(Fixed const & rhs) const ;
+		Fixed & operator<(Fixed const & rhs) const ;
+		Fixed & operator>=(Fixed const & rhs) const ;
+		Fixed & operator<=(Fixed const & rhs) const ;
+		Fixed & operator==(Fixed const & rhs) const ;
+		Fixed & operator!=(Fixed const & rhs) const ;
 
-		int		toInt(void) const;
-		int		getRawBits(void) const;
+		Fixed operator+(Fixed const & rhs);
+		Fixed operator-(Fixed const & rhs);
+		Fixed operator*(Fixed const & rhs);
+		Fixed operator/(Fixed const & rhs);
 
-		void	setRawBits(int const raw);
+		Fixed & operator++(void);
+		Fixed & operator--(void);
+		Fixed operator++(int n);
+		Fixed operator--(int n);
 
-		float	toFloat(void)const;
+		int			toInt(void) const;
+		int			getRawBits(void) const;
+
+		void		setRawBits(int const raw);
+
+		float		toFloat(void)const;
+
+		static int	min(Fixed & nb1, Fixed & nb2);
+		static int	max(Fixed & nb1, Fixed & nb2);
+		static int	min(Fixed const & nb1, Fixed const & nb2);	
+		static int	max(Fixed const & nb1, Fixed const & nb2);
 
 	private:
 		int					_int;
