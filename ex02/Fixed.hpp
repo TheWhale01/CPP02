@@ -12,35 +12,35 @@ class Fixed {
 		Fixed( float const nb );
 		~Fixed( void );
 
-		Fixed & operator=(Fixed const & rhs);
-		Fixed & operator>(Fixed const & rhs) const ;
-		Fixed & operator<(Fixed const & rhs) const ;
-		Fixed & operator>=(Fixed const & rhs) const ;
-		Fixed & operator<=(Fixed const & rhs) const ;
-		Fixed & operator==(Fixed const & rhs) const ;
-		Fixed & operator!=(Fixed const & rhs) const ;
+		bool operator>(Fixed const & rhs) const ;
+		bool operator<(Fixed const & rhs) const ;
+		bool operator>=(Fixed const & rhs) const ;
+		bool operator<=(Fixed const & rhs) const ;
+		bool operator==(Fixed const & rhs) const ;
+		bool operator!=(Fixed const & rhs) const ;
 
-		Fixed operator+(Fixed const & rhs);
-		Fixed operator-(Fixed const & rhs);
-		Fixed operator*(Fixed const & rhs);
-		Fixed operator/(Fixed const & rhs);
+		Fixed operator++(int);
+		Fixed operator--(int);
+		Fixed operator+(Fixed const & rhs) const ;
+		Fixed operator-(Fixed const & rhs) const ;
+		Fixed operator*(Fixed const & rhs) const ;
+		Fixed operator/(Fixed const & rhs) const ;
 
 		Fixed & operator++(void);
 		Fixed & operator--(void);
-		Fixed operator++(int n);
-		Fixed operator--(int n);
+		Fixed & operator=(Fixed const & rhs);
 
-		int			toInt(void) const;
-		int			getRawBits(void) const;
+		int					toInt(void) const;
+		int					getRawBits(void) const;
 
-		void		setRawBits(int const raw);
+		void				setRawBits(int const raw);
 
-		float		toFloat(void)const;
+		float				toFloat(void)const;
 
-		static int	min(Fixed & nb1, Fixed & nb2);
-		static int	max(Fixed & nb1, Fixed & nb2);
-		static int	min(Fixed const & nb1, Fixed const & nb2);	
-		static int	max(Fixed const & nb1, Fixed const & nb2);
+		static Fixed		min(Fixed & nb1, Fixed & nb2);
+		static Fixed		max(Fixed & nb1, Fixed & nb2);
+		static Fixed const	min(Fixed const & nb1, Fixed const & nb2);	
+		static Fixed const	max(Fixed const & nb1, Fixed const & nb2);
 
 	private:
 		int					_int;
