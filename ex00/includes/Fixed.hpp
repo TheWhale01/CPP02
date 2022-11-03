@@ -8,9 +8,9 @@ class Fixed
 	public:
 		Fixed(void);
 		~Fixed(void);
-		Fixed(Fixed &to_copy);
+		Fixed(Fixed const &to_copy);
 
-		Fixed &operator=(Fixed &to_copy);
+		Fixed &operator=(Fixed const &to_copy);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
