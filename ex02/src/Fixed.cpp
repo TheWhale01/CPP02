@@ -140,7 +140,7 @@ Fixed Fixed::operator++(int)
 {
 	Fixed tmp(*this);
 
-	++tmp._nb;
+	++(*this);
 	return (tmp);
 }
 
@@ -148,7 +148,7 @@ Fixed Fixed::operator--(int)
 {
 	Fixed tmp(*this);
 
-	--tmp._nb;
+	--(*this);
 	return (tmp);
 }
 
